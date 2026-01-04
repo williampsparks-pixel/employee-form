@@ -1,0 +1,35 @@
+/* Employee Form Styles */
+
+h2 {
+  margin-bottom: 16px;
+}
+
+form {
+  max-width: 400px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+
+  margin: 40px auto;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+input {
+  padding: 6px;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
