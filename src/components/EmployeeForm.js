@@ -18,8 +18,11 @@ class EmployeeForm extends React.Component {
   };
 handleSubmit = (event) => {
   event.preventDefault();
-  console.log(this.state);
 
+  // Send employee data up to App.js  
+  this.props.addEmployee(this.state);
+
+  // Clear the form
   this.setState({
     name: '',
     email: '',
@@ -27,12 +30,13 @@ handleSubmit = (event) => {
     department: ''
   });
 };
+
   render() {
     return (
       <div>
         <h2>New Employee</h2>
 
-        <form onSubmit={this.handleSubmit}>
+       <form onSubmit={this.handleSubmit} autoComplete="off">
           <label>
             Name:
             <input
