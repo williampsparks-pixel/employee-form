@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import "./App.css";
+
 import EmployeeForm from "./components/EmployeeForm";
+import EmployeeList from "./components/EmployeeList";
 
 function App() {
   // Load saved employees ONCE when the app starts
@@ -20,9 +23,26 @@ function App() {
     saveData(updatedEmployees);
   };
 
+  // Optional: Clear all employees (handy for testing)
+  const clearEmployees = () => {
+    setEmployees([]);
+    saveData([]);
+  };
+
   return (
-    <div>
-      <EmployeeForm addEmployee={addEmployee} employees={employees} />
+    <div className="App">
+      <h1>Employee Management System</h1>
+
+      <EmployeeForm addEmployee={addEmployee} />
+
+      <EmployeeList employees={employees} />
+
+      {/* Optional button for testing */}
+      {employees.length > 0 && (
+        <button onClick={clearEmployees} style={{ marginTop: "16px" }}>
+          Clear Employees
+        </button>
+      )}
     </div>
   );
 }
